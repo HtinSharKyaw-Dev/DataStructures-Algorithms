@@ -30,6 +30,38 @@ public class TreeNode {
         }
     }
 
+    public TreeNode get(int value) {
+        if (value == this.data) {
+            return this;
+        }
+
+        if (value < this.data ) {
+            if (left != null) {
+                return left.get(value);
+            }
+        }else {
+            if (right != null) {
+                return right.get(value);
+            }
+        }
+        return null;
+    }
+
+    public TreeNode getMin() {
+        if (left != null) {
+            return left.getMin();
+        }
+        return this;
+    }
+
+    public TreeNode getMax() {
+        if (right != null) {
+            return right.getMax();
+        }
+        return this;
+    }
+
+
     public void transverseTree() {
         if (left != null) {
             left.transverseTree();
@@ -42,4 +74,10 @@ public class TreeNode {
         }
     }
 
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "data=" + data +
+                '}';
+    }
 }

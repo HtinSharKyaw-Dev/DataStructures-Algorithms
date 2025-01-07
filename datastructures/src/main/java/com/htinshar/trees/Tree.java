@@ -18,4 +18,25 @@ public class Tree {
         }
         root.transverseTree();
     }
+
+    public TreeNode get(int value) {
+        if (root != null) {
+            return root.get(value);
+        }
+        return null;
+    }
+
+    public TreeNode getMin() {
+        if (root != null) {
+            return root.getMin();
+        }
+        return new TreeNode(Integer.MIN_VALUE);
+    }
+
+    public TreeNode getMax() {
+        if (root != null) {
+            return root.getMax();
+        }
+        return new TreeNode(Integer.MAX_VALUE);
+    }
 }
